@@ -1,0 +1,3 @@
+npm:prettier
+npm:prettier-plugin-ini
+npm:prettier-plugin-sh
