@@ -1,0 +1,8 @@
+#
+# RaspberryPi 2 config
+#
+
+disable_overscan=1
+
+hdmi_drive=2
+hdmi_force_hotplug=1
