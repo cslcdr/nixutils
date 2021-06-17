@@ -1,0 +1,45 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "npm:prettier": "npm:prettier@3.3.2",
+      "npm:prettier-plugin-ini": "npm:prettier-plugin-ini@1.2.0",
+      "npm:prettier-plugin-sh": "npm:prettier-plugin-sh@0.14.0_prettier@3.3.2"
+    },
+    "npm": {
+      "mvdan-sh@0.10.1": {
+        "integrity": "sha512-kMbrH0EObaKmK3nVRKUIIya1dpASHIEusM13S4V1ViHFuxuNxCo+arxoa6j/dbV22YBGjl7UKJm9QQKJ2Crzhg==",
+        "dependencies": {}
+      },
+      "prettier-plugin-ini@1.2.0": {
+        "integrity": "sha512-8RR2n3AGlObQ11NCpyvv1N+xkTe/RdGp1vko8xeuXubWUa9NrOEZMX463H1AvnhnUX8b1NeJk3TKFkgvWunApg==",
+        "dependencies": {
+          "prettier": "prettier@3.3.2"
+        }
+      },
+      "prettier-plugin-sh@0.14.0_prettier@3.3.2": {
+        "integrity": "sha512-hfXulj5+zEl/ulrO5kMuuTPKmXvOg0bnLHY1hKFNN/N+/903iZbNp8NyZBTsgI8dtkSgFfAEIQq0IQTyP1ZVFQ==",
+        "dependencies": {
+          "mvdan-sh": "mvdan-sh@0.10.1",
+          "prettier": "prettier@3.3.2",
+          "sh-syntax": "sh-syntax@0.4.2"
+        }
+      },
+      "prettier@3.3.2": {
+        "integrity": "sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==",
+        "dependencies": {}
+      },
+      "sh-syntax@0.4.2": {
+        "integrity": "sha512-/l2UZ5fhGZLVZa16XQM9/Vq/hezGGbdHeVEA01uWjOL1+7Ek/gt6FquW0iKKws4a9AYPYvlz6RyVvjh3JxOteg==",
+        "dependencies": {
+          "tslib": "tslib@2.6.3"
+        }
+      },
+      "tslib@2.6.3": {
+        "integrity": "sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==",
+        "dependencies": {}
+      }
+    }
+  },
+  "remote": {}
+}

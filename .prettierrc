@@ -1,0 +1,11 @@
+{
+  "overrides": [
+    {
+      "files": [".inputrc", ".shrc", "*ignore"],
+      "options": {
+        "parser": "sh"
+      }
+    }
+  ],
+  "plugins": ["prettier-plugin-sh", "prettier-plugin-ini"]
+}
