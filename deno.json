@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "prettier": "npm:prettier@^3.8.1",
+    "prettier-plugin-ini": "npm:prettier-plugin-ini@^1.3.0",
+    "prettier-plugin-sh": "npm:prettier-plugin-sh@^0.18.0"
+  },
+  "nodeModulesDir": "auto"
+}

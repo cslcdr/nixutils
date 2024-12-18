@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+export GIT_TERMINAL_PROMPT=0
+export SHELL_SESSIONS_DISABLE=1

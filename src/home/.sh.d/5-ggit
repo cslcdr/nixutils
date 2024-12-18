@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+ggit() (
+  root=~/.ggit
+  logs=${root}/logs
+  repos=${root}/repos
+
+  if [ ! -r "${repos}" ]; then
+    reggit
+  fi
+
+  rm -rf "${logs}"
+  mkdir -p "${logs}"
+
+  line=$(tput cols | xargs seq | xargs printf '~%.0s')
+
+  while read -r repo; do
+    {
+      printf '\n%s\n\n%s\n\n' "${line}" "${repo}"
+      git -C "${repo}" -c color.ui=always "${@}" 2>&1 \
+        | sed 's/^/    /g'
+    } > "${logs}/${repo##*/}" &
+  done < "${repos}"
+
+  wait
+
+  cat "${logs}"/*
+
+  printf '\n%s\n\n' "${line}"
+)
+
+reggit() (
+  root=~/.ggit
+
+  mkdir -p "${root}"
+
+  find "$(pwd)" -type d -name .git -print0 \
+    | xargs -r -0 dirname \
+    | tee "${root}"/repos
+)
