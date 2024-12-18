@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# shellcheck disable=SC1090
+. <(
+  prompt() {
+    printf %s=\' "${1}"
+    shift
+    printf \$'(printf %s %s)\r\e[30m\e[47m\e[K' '%\*s' \$'{COLUMNS}'
+    printf '  %s  '\\\\ "${@}"
+    printf '  $%s\e[0m\n> '\' '(git branch --show-current 2> /dev/null)'
+  }
+
+  if [ "${BASH_VERSION}" ]; then
+    prompt PS1 \\t \\u \\h \\W
+  elif [ "${ZSH_VERSION}" ]; then
+    prompt PROMPT %\* %n %m %1\~
+  fi
+)
