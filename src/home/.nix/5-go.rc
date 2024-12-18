@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+export GOPATH=~/.go
+export GOROOT=~/.go/sdk
+
+PATH=${GOPATH}/bin:${GOROOT}/bin:${PATH}
