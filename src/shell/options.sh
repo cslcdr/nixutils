@@ -30,6 +30,7 @@ elif [ "${ZSH_VERSION}" ]; then
   setopt hist_ignore_all_dups
   setopt hist_ignore_space
   setopt inc_append_history
+  setopt interactive_comments
   setopt no_beep
   setopt no_case_glob
   setopt no_case_match
