@@ -1,0 +1,6 @@
+$include /etc/inputrc
+
+set bell-style visible
+set completion-ignore-case on
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
