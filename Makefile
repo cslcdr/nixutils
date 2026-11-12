@@ -12,13 +12,13 @@ targets := $(addprefix $(target)/, gitconfig shrc vimrc)
 all: clean install $(pre-commit)
 
 clean:
-	rm -rf $(target)
+	rm -rf '$(target)'
 
 format:
 	prettier --write .
 
 $(hooks):
-	mkdir -p $(hooks)
+	mkdir -p '$(hooks)'
 
 install: $(targets)
 
@@ -26,19 +26,19 @@ lint:
 	prettier --check .
 
 $(pre-commit): $(makefile) | $(hooks)
-	echo make lint > $(pre-commit)
-	chmod 0755 $(pre-commit)
+	echo make lint > '$(pre-commit)'
+	chmod 0755 '$(pre-commit)'
 
 $(target):
-	mkdir -p $(target)
+	mkdir -p '$(target)'
 
 $(targets): $(makefile) $(src)/*/* | $(target)
-	cp -r $(src)/static/. $(target)
-	cat $(src)/shell/* | grep -v '^#' > $(target)/shrc
-	perl -pi -e 's|path/to|$(target)|g' $(target)/*
+	cp -r '$(src)'/static/. '$(target)'
+	cat '$(src)'/shell/* | grep -v '^#' > '$(target)'/shrc
+	perl -pi -e 's|path/to|$(target)|g' '$(target)'/*
 	@printf '\n# %s\n\n' 'UPDATE YOUR SHELL CONFIGURATION'
 	@echo . \''$(target)/shrc'\'
 	@printf '\n# %s\n\n' 'UPDATE YOUR VIM CONFIGURATION'
-	@echo source $(shell perl -p -e 's/ /\\\\ /g' <<< '$(target)')/vimrc
+	@echo source '$(shell echo '$(target)' | perl -p -e 's/ /\\\\ /g')'/vimrc
 	@printf '\n# %s\n\n' 'UPDATE YOUR GLOBAL GIT CONFIGURATION'
 	@echo git config --global --add include.path \'$(target)/gitconfig\'
