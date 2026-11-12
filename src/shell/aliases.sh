@@ -2,6 +2,7 @@
 
 alias clear='tput clear'
 alias grep='grep -i --color=auto'
+alias l='ls'
 alias la='ll -A'
 alias less='less -i'
 alias ll='ls -l'
