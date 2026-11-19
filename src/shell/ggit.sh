@@ -10,7 +10,7 @@ ggit() (
     | xargs -r -0 dirname \
       | while read -r repo; do
         {
-          printf '\n\e[1m\e[37m\e[44m %s\e[K\e[m\n\n' "${repo}"
+          printf '\n\e[1m\e[30m\e[46m %s\e[K\e[m\n\n' "${repo}"
           git -C "${repo}" -c color.ui=always "${@}" 2>&1
         } > "${logs}/$(printf '%08d' ${id})" &
 
